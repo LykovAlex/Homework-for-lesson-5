@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Шахматы</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <script>
+
+    function chess(){
+    var container = document.createElement("div");// сделали основной блок - контейнер чтобы выровнить доску по ширине
+    container.className = "container";
+    document.body.appendChild(container);
+
+
+    var containerForLetter = document.createElement("div"); // создали контейнер для букв для второго игрока и засунули его в основной контейнер
+    containerForLetter.className = "containerForLetter";
+    container.appendChild(containerForLetter);
+
+    var ollLetters = ["A","B","C","D","I","F","G","H"];
+    var ollLettersReverse = ["A","B","C","D","I","F","G","H"];
+    ollLettersReverse = ollLettersReverse.reverse();
+    for(var i = 0; i <= 7; ollLettersReverse[i], i++){ // создаём буквы и засовываем их в контейнер для букв
+      var letter = document.createElement("div");
+      letter.className = "letter";
+      letter.innerText = ollLettersReverse[i];
+      containerForLetter.appendChild(letter);
+    }
+
+
+
+   var containerForNumbers = document.createElement("div");// создаём контейнер для цифр для первого игрока
+   containerForNumbers.className = "containerForNumbers";
+   container.appendChild(containerForNumbers);
+
+   var containerForNumbers2 = document.createElement("div");// создаём второй контейнер для цифр для второго игрока
+   containerForNumbers2.className = "containerForNumbers2";
+   container.appendChild(containerForNumbers2);
+
+
+
+   for(i = 8; i >= 1; i--){
+   var numbers = document.createElement("div"); // засовываем цифры в первый контейнер
+   numbers.className = "numbers";
+   numbers.innerText = i;
+   containerForNumbers.appendChild(numbers);
+   }
+
+   for(i = 1; i <= 8; i++){
+   var numbers = document.createElement("div"); // засовываем цифры во второй контейнер
+   numbers.className = "numbers";
+   numbers.innerText = i;
+   containerForNumbers2.appendChild(numbers);
+   }
+
+
+    var wrapper = document.createElement("div"); // создаём обёртку для клеток
+    wrapper.className = "wrapper";
+    container.appendChild(wrapper);
+
+    for(i = 1; i <= 64; i++) {
+    var item = document.createElement("div"); // создаём сами клетки
+    item.className = "item";
+    wrapper.appendChild(item);
+    if(i >= 1 && i <=8 || i >= 17 && i <= 24 || i >= 33 && i <= 40 || i >= 49 && i <= 56){
+    if(i%2==0){
+      item.style.backgroundColor = "rgb(161, 158, 158)";
+        }
+      } else {
+        if(i%2==1){
+          item.style.backgroundColor = "rgb(161, 158, 158)";
+        }
+      }
+      if(i >= 49 && i<=56) item.innerHTML = "&#9817";
+      if(i == 57 || i == 64) item.innerHTML = "&#9814";
+      if(i == 58 || i == 63) item.innerHTML = "&#9816";
+      if(i == 59 || i == 62) item.innerHTML = "&#9815";
+      if(i == 60) item.innerHTML = "&#9812";
+      if(i == 61) item.innerHTML = "&#9813";
+      if(i >=9 && i <=16) item.innerHTML = "&#9823";
+      if(i == 1 || i == 8) item.innerHTML = "&#9820";
+      if(i == 2 || i == 7) item.innerHTML = "&#9822";
+      if(i == 3 || i == 6) item.innerHTML = "&#9821";
+      if(i == 4) item.innerHTML = "&#9818";
+      if(i == 5) item.innerHTML = "&#9819";
+    }
+
+
+    var containerForLetter2 = document.createElement("div"); // создали контейнер для букв для второго игрока и засунули его в основной контейнер
+    containerForLetter2.className = "containerForLetter2";
+    container.appendChild(containerForLetter2);
+
+
+   for(var i = 0; i <= 7; ollLetters[i], i++){ // создаём буквы и засовываем их в контейнер для букв
+   var letter = document.createElement("div");
+   letter.className = "letter";
+   letter.innerText = ollLetters[i];
+   containerForLetter2.appendChild(letter);
+   }
+}
+
+chess();
+
+
+
+
+    </script>
+  </body>
+</html>

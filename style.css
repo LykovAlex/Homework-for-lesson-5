@@ -1,0 +1,53 @@
+.container{           /* Выравниваем по ширине */
+  max-width:800px;
+  max-height: 800px;
+  margin:0 auto;
+}
+
+.wrapper{              /* Оформляем доску */
+  max-height:640px;
+  max-width:640px;
+  border:5px double black;
+  display:flex;
+  flex-wrap:wrap;
+  margin:0 auto;
+}
+.item{
+  height:80px;
+  width:12.5%;
+  text-align: center;
+  line-height: 80px;
+  font-size: 250%;
+}
+
+.containerForLetter{   /* Подставляем буквы */
+  text-align: center;
+  transform:rotate(180deg);
+  max-width:640px;
+  margin:0 80px;
+}
+.containerForLetter2{
+  text-align: center;
+  max-width:640px;
+  margin:0 80px;
+}
+.letter{
+  height:80px;
+  width:12.5%;
+  display:inline-block;
+  line-height: 80px;
+}
+
+.containerForNumbers{  /* Подставляем цифры */
+float:left;
+}
+.containerForNumbers2{
+float:right;
+transform:rotate(180deg);
+}
+.numbers{
+  height:80px;
+  width:80px;
+  text-align: center;
+  line-height: 80px;
+}
